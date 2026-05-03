@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "animate.css";
+
+:root {
+  --font-display: "Playfair Display", serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f5f0e8;
+}
+::-webkit-scrollbar-thumb {
+  background: #c4956a;
+  border-radius: 3px;
+}
+
+/* Tile card hover effect */
+.tile-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tile-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(44, 44, 44, 0.15);
+}
+
+/* Hero gradient */
+.hero-gradient {
+  background: linear-gradient(
+    135deg,
+    #2c2c2c 0%,
+    #4a3728 40%,
+    #8b6914 100%
+  );
+}
+
+/* Marquee strip */
+.marquee-strip {
+  background: linear-gradient(90deg, #8b6914, #c4956a, #8b6914);
+}
+
+/* Auth card */
+.auth-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(196, 149, 106, 0.3);
+}
+
+/* Grain overlay */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.06;
+  z-index: 1;
+}
+
+/* Loading spinner */
+.loader {
+  border: 3px solid #e8dcc8;
+  border-top: 3px solid #8b6914;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Badge styles */
+.badge-in-stock {
+  background: #d4edda;
+  color: #155724;
+}
+.badge-out-stock {
+  background: #f8d7da;
+  color: #721c24;
+}

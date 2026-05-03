@@ -1,0 +1,39 @@
+# Suggested Git Commit Messages (at least 10)
+# Run these one by one as you build the project
+
+git init
+git add .
+git commit -m "init: bootstrap Next.js project with Tailwind CSS and DaisyUI"
+
+git add src/lib/auth.js src/lib/auth-client.js src/app/api/auth/
+git commit -m "feat: configure BetterAuth with MongoDB adapter and Google OAuth"
+
+git add src/app/layout.js src/app/globals.css tailwind.config.js
+git commit -m "feat: set up global layout, custom Playfair Display typography and TileVista theme"
+
+git add src/components/Navbar.js src/components/Footer.js
+git commit -m "feat: build responsive Navbar with auth state and custom Footer with social links"
+
+git add src/components/HomeBanner.js src/components/MarqueeStrip.js
+git commit -m "feat: add hero banner with SwiperJS carousel and animated marquee strip"
+
+git add src/components/FeaturedTiles.js src/components/HowItWorks.js src/app/(main)/page.js
+git commit -m "feat: implement home page with featured tiles section and how it works component"
+
+git add src/app/(main)/all-tiles/ src/components/AllTilesClient.js
+git commit -m "feat: build all tiles gallery page with search bar and category filter"
+
+git add "src/app/(main)/tile/" src/components/ProtectedPage.js
+git commit -m "feat: add single tile details page with private route protection"
+
+git add src/components/LoginClient.js src/components/RegisterClient.js src/app/auth/
+git commit -m "feat: implement login and register pages with email/password and Google OAuth"
+
+git add src/components/MyProfileClient.js src/components/UpdateProfileClient.js src/app/(main)/my-profile/
+git commit -m "feat: add my profile page with update name and image URL feature"
+
+git add src/app/not-found.js src/app/(main)/loading.js
+git commit -m "feat: add custom 404 not-found page and loading state component"
+
+git add data/tiles.json package.json README.md .env.local .gitignore vercel.json
+git commit -m "chore: add tiles JSON data, environment variables, README and deployment config"

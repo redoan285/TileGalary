@@ -12,14 +12,16 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const tile = await getTileById(params.id);
+  const { id } = await params;
+  const tile = await getTileById(id);
   return {
     title: tile ? `${tile.title} — TileVista` : "Tile Not Found",
   };
 }
 
 export default async function TileDetailsPage({ params }) {
-  const tile = await getTileById(params.id);
+  const { id } = await params;
+  const tile = await getTileById(id);
 
   if (!tile) {
     notFound();
